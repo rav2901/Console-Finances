@@ -91,9 +91,34 @@ console.log("Financial Analysis \n ----------------");
 var totalMonths = finances.length; // 86
 console.log("Total Months: " + finances.length);
 
-//use for loop to sum up the monetary values in the array, use [1] to exclude the months.
+//use for loop to sum up the  values in the array, use [1] to exclude the months[0].
 var netProfitLoss = 0;
 for (var i = 0; i < finances.length; i++){
   netProfitLoss += finances[i][1];
 }
 console.log ("Total: $" + netProfitLoss);
+
+// average change- Start by tracking the change from month to month, need to substract and list all the new values.
+//https://stackoverflow.com/questions/19302863/issue-of-comparing-element-in-array-to-previous-one-and-not-going-out-of-bounds
+// try to make a new array and find a way to store those values.Tried .push method, seems to work
+//https://blog.hubspot.com/website/javascript-array-push#:~:text=an%20existing%20array.-,The%20.,multiple%20elements%20to%20an%20array.
+var track = [];
+
+for (var i= 1; i < totalMonths; i++){
+  var j = finances[i][1] - finances [i - 1][1];
+  
+ track.push(j);
+}
+//console.log (track)
+
+var trackTotal = 0;
+for(i = 0; i < track.length; i++){
+ trackTotal += track[i];
+}
+//console.log (trackTotal)
+//Finally, I can find the average change
+var averageChange = trackTotal / (totalMonths - 1);
+var averageChange = Math.round(averageChange * 100)
+
+console.log("Average Change: " + averageChange);
+
