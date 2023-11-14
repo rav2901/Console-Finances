@@ -13,3 +13,4 @@ https://stackoverflow.com/questions/19302863/issue-of-comparing-element-in-array
 
 Finally, I had to find the greatest increase and greatest decrease in profi/ losses:
 I've used  for if, the new array I made (to find the amounts) and the original array finances (to find the months).
+![Capture for readme](https://github.com/rav2901/Console-Finances/assets/98492291/a23b50e8-d004-434e-96e9-578880236aed)
