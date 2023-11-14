@@ -121,4 +121,22 @@ var averageChange = trackTotal / (totalMonths - 1);
 var averageChange = Math.round(averageChange * 100)
 
 console.log("Average Change: " + averageChange);
+// find the increase and decrease and the month for each, use for loop, the array track and also the array finances so I can find the months. Use +1 since one array is 85 and the other is 86.
+var profitIncrease = track[0];
+var increaseMonth;
+var profitDecrease = track[0];
+var decreaseMonth;
 
+for(var i = 0; i < track.length; i ++){
+  if (profitIncrease < track[i]){
+    profitIncrease = track[i];
+    increaseMonth = finances[i + 1] [0];
+  }
+  if (profitDecrease > track[i]){
+    profitDecrease = track [i];
+    decreaseMonth = finances[i + 1] [0];
+  }
+}
+console.log("Greatest Increase in Profits/Losses: " + increaseMonth + " $" + profitIncrease);
+
+console.log("Greatest Decrease in Profits/Losses: " + decreaseMonth + " $" + profitDecrease);
