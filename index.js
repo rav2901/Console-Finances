@@ -86,5 +86,14 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+console.log("Financial Analysis \n ----------------");
+//use .length to find number of months
+var totalMonths = finances.length; // 86
+console.log("Total Months: " + finances.length);
 
-
+//use for loop to sum up the monetary values in the array, use [1] to exclude the months.
+var netProfitLoss = 0;
+for (var i = 0; i < finances.length; i++){
+  netProfitLoss += finances[i][1];
+}
+console.log ("Total: $" + netProfitLoss);
